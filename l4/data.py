@@ -28,7 +28,7 @@ class Point_Generator():
             b = np.random.uniform(0, 5)
 
         x = np.linspace(0, 10, self.inliers_num)
-        y = k * x + b + np.random.normal(scale=eps)
+        y = k * x + b + np.random.normal(scale=eps, size = len(x))
         inliers = np.vstack((x,y)).T
 
         x = np.random.uniform(0, 10, self.outliers_num)
